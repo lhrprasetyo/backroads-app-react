@@ -1,20 +1,16 @@
-import React from 'react'
-import { pageLinks } from '../Data';
+import React from "react";
+import PageLink from "./PageLink";
 
-const PageLinks = ({parentClass,itemClass}) => {
+import { pageLinks } from "../Data";
+
+const PageLinks = ({itemClass ,parentClass}) => {
   return (
-    <ul className={parentClass} id="nav-links">
-          {pageLinks.map((link) => {
-            return (
-              <li key={link.id}>
-                <a href={link.href} rel="noreferrer" className={itemClass}>
-                  {link.text}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-  )
-}
+    <ul className={parentClass} id="footer-links">
+      {pageLinks.map((link) => {
+        return <PageLink key={link.id} {...link} itemClass={itemClass} />;
+      })}
+    </ul>
+  );
+};
 
-export default PageLinks
+export default PageLinks;

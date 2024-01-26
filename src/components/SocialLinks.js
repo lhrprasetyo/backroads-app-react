@@ -1,26 +1,13 @@
-import React from 'react'
-import { socialLinks } from '../Data';
+import React from "react";
 
-const SocialLinks = ({parentClass,itemClass}) => {
+const SocialLinks = ({ href, icon, itemClass }) => {
   return (
-    <ul className={parentClass}>
-          {socialLinks.map((social) => {
-            const { id, href, icon } = social;
-            return (
-              <li key={id}>
-                <a
-                  href={href}
-                  rel="noreferrer"
-                  target="_blank"
-                  className={itemClass}
-                >
-                  <i className={icon}></i>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-  )
-}
+    <li>
+      <a href={href} rel="noreferrer" target="_blank" className={itemClass}>
+        <i className={icon}></i>
+      </a>
+    </li>
+  );
+};
 
-export default SocialLinks
+export default SocialLinks;

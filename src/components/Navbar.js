@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../images/logo.svg";
 
+import { socialLinks } from "../Data";
+
 import PageLinks from "./PageLinks";
 import SocialLinks from "./SocialLinks";
 
@@ -14,9 +16,15 @@ const Navbar = () => {
             <i className="fas fa-bars"></i>
           </button>
         </div>
+        <PageLinks itemClass={"nav-link"} parentClass={"nav-links"}/>
 
-        <PageLinks parentClass={'nav-links'} itemClass={'nav-link'}/>
-        <SocialLinks parentClass={"nav-icons"} itemClass={'nav-icon'}/>  
+        <ul className="nav-icons">
+          {socialLinks.map((social) => {
+            return (
+              <SocialLinks key={social.id} itemClass={'nav-icon'} {...social}/>
+            );
+          })}
+        </ul>
 
         
       </div>
